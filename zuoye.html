@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    html{
+	  height:100%;
+	  background:linear-gradient(to bottom,#e1dc00,#000);
+	}
+     .container{
+	   width:200px;
+	   height:200px;
+	   position:relative;
+	   margin:200px auto;
+	   transform-style:preserve-3D;
+	   transform:rotateX(-90deg) rotateY(55deg);
+	   animation:change 6s linear infinite;  	   
+	 }
+	 .container>div{
+	   width:200px;
+	   height:200px;
+	   border:1px solid #fff;
+	   background:#000;
+	   opacity:0.5;
+	   position:absolute;
+	   text-align:center;
+	   line-height:200px;	
+	   transition:all 0.5s linear;
+	   color:#fff;
+	   font-size:24px;
+	 }
+     .up{
+	   transform:rotateX(90deg) translateZ(100px);
+	 }
+	 .down{
+	   transform:rotateX(-90deg) translateZ(100px);
+	 }
+	 .left{
+	   transform:rotateY(-90deg) translateZ(100px);
+	 }
+	 .right{
+	   transform:rotateY(90deg) translateZ(100px);
+	 }
+	 .before{
+	   transform:translateZ(100px);
+	 }
+	 .after{
+	   transform:translateZ(-100px);
+	 }
+	 @keyframes change{
+	   0%{
+	     transform:rotateX(0deg) rotateY(0deg);
+	   }
+	   100%{
+	     transform:rotateX(360deg) rotateY(20deg);
+	   }
+	 }
+	 /*鼠标悬停偏移*/
+	 .container:hover div.up{
+	    transform:rotateX(90deg) translateZ(200px);
+	 }
+	  .container:hover div.down{
+	    transform:rotateX(-90deg) translateZ(200px);
+	 }
+	  .container:hover div.left{
+	    transform:rotateY(-90deg) translateZ(200px);
+	 }
+	  .container:hover div.right{
+	    transform:rotateY(90deg) translateZ(200px);
+	 }
+	  .container:hover div.before{
+	    transform:translateZ(200px);
+	 }
+	  .container:hover div.after{
+	    transform:translateZ(-200px);
+	 }
+	 /*里面的div*/
+	 div.up2,div.down2,div.left2,div.right2,div.before2,div.after2{
+	   width:100px;
+	   height:100px;
+	   border:1px solid #000;
+	   left:50px;
+	   top:50px;
+	   opacity:1;
+	   background:gray;	  
+	 }
+     .up2{
+	   transform:rotateX(90deg) translateZ(50px);
+	 }
+	 .down2{
+	   transform:rotateX(-90deg) translateZ(50px);
+	 }
+	 .left2{
+	   transform:rotateY(-90deg) translateZ(50px);
+	 }
+	 .right2{
+	   transform:rotateY(90deg) translateZ(50px);
+	 }
+	 .before2{
+	   transform:translateZ(50px);
+	 }
+	 .after2{
+	   transform:translateZ(-50px);
+	 }
+
+  </style>
+ </head>
+ <body>
+
+    <div class="container">
+	   <div class="up">上面</div>
+	   <div class="down">下面</div>
+	   <div class="left">左面</div>
+	   <div class="right">右面</div>
+	   <div class="before">前面</div>
+	   <div class="after">后面</div>
+	   <div class="up2"></div>
+	   <div class="down2"></div>
+	   <div class="left2"></div>
+	   <div class="right2"></div>
+	   <div class="before2"></div>
+	   <div class="after2"></div>
+	</div>
+ </body>
+</html>
